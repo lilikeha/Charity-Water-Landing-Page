@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charity: Water Supporter</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #fdfaf3;
+      color: #222;
+    }
+
+    /* Header */
+    .header {
+      background: #fff6e0;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header img {
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .header span {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: url("https://via.placeholder.com/1200x700") no-repeat center center/cover;
+      color: white;
+      text-align: right;
+      padding: 60px 20px;
+    }
+
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      max-width: 450px;
+      margin-left: auto;
+      border-radius: 8px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      margin-bottom: 25px;
+    }
+
+    /* Donation Box */
+    .donation-box {
+      background: #ffe6d9;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      color: #222;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .tabs button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      background: #fff6e0;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .tabs button.active {
+      background: #fff;
+      border-bottom: 3px solid #003366;
+      color: #003366;
+    }
+
+    .amounts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .amounts button {
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .amounts button.active {
+      border: 2px solid #003366;
+      background: #e6f0ff;
+      color: #003366;
+    }
+
+    .donate-btn {
+      display: inline-block;
+      background: #003366;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .donate-btn:hover {
+      background: #002244;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <img src="https://via.placeholder.com/30x30" alt="Charity Water Logo">
+    <span>charity: water SUPPORTER</span>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>Turn Activism Into Action</h1>
+      <p>Fund clean water projects with full transparency, and watch your impact ripple across the globe.</p>
+
+      <div class="donation-box">
+        <div class="tabs">
+          <button class="active" id="onceTab">Once</button>
+          <button id="monthlyTab">Monthly</button>
+        </div>
+        <p><strong>CHOOSE AMOUNT</strong></p>
+        <div class="amounts">
+          <button>$20 USD</button>
+          <button>$40 USD</button>
+          <button>$100 USD</button>
+          <button>Other</button>
+        </div>
+        <a href="#" class="donate-btn">DONATE TODAY</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Tab switching
+    const onceTab = document.getElementById('onceTab');
+    const monthlyTab = document.getElementById('monthlyTab');
+    const tabs = [onceTab, monthlyTab];
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+
+    // Amount selection
+    const amountButtons = document.querySelectorAll('.amounts button');
+    amountButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        amountButtons.forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
